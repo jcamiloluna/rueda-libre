@@ -1,0 +1,21 @@
+
+URL_COMPLETA: http://127.0.0.1:5500/index.html
+PROTOCOLO: http (version HTTP/1.1)
+HOST: 127.0.0.1:5500
+PUERTO: 5500
+RUTA: index.html
+METODO_DE_PETICION: GET
+CODIGO_DE_ESTADO: 200 OK
+
+(5) http://127.0.0.1:5500/index.html/promociones.html
+RESULTADO_WEB: Cannot GET /promociones.html  
+                     404 Not Found
+
+EXPLICACION: Significa que el servidor respondio 404 debido a que no encontró ese archivo con esa ruta ingresada
+
+(6) HTML: Estructura y bases de la pagina
+            Ejemplo: Mostrar el titulo de la pagina, y asignar los parrafos 
+    CSS: Estilos de la pagina
+            Ejemplo: Cambiar el color de un titulo o texto
+    JavaScript: Añadir funciones
+            Ejemplo: Validar o calcular algun valor por alquiler o venta de bicicleta
