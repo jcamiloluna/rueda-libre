@@ -19,3 +19,10 @@ EXPLICACION: Significa que el servidor respondio 404 debido a que no encontró e
             Ejemplo: Cambiar el color de un titulo o texto
     JavaScript: Añadir funciones
             Ejemplo: Validar o calcular algun valor por alquiler o venta de bicicleta
+
+RUTAS
+        principal: rueda-libre/
+        inicio: rueda-libre/index.html
+        tarifas: rueda-libre/paginas/tarifas.html
+        reservas: rueda-libre/paginas/reservas.html 
+
