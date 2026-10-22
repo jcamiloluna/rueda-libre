@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Reserva tu bicicleta con Rueda Libre. Consulta nuestros datos de contacto y horarios de atención.">
+    <meta name="description"
+        content="Reserva tu bicicleta con Rueda Libre. Consulta nuestros datos de contacto y horarios de atención.">
 
     <title>Reservas | Rueda Libre</title>
+    <link rel="stylesheet" href="../css/estilos.css">
 </head>
 
 <body>
-    <header>
-            <center><h1>RUEDA LIBRE</h1></center>
-                <a href="../index.html">
-            <img src="../img/logo.png" alt="Logo de Rueda Libre" width="120">
-                </a>
-    </header>   
+    <header class="head">
+        <a href="../index.html">
+            <img src="../img/logo.png" alt="Logo de Rueda Libre" width="90">
+        </a>
+        <h1>RUEDA LIBRE</h1>
+    </header>
     <nav>
         <ul>
             <li><a href="../index.html">Inicio</a></li>
@@ -24,36 +27,85 @@
             <li><a href="reservas.html">Reservas</a></li>
         </ul>
     </nav>
+    <main class="reservas-main">
+        <div class="reservas-heading">
+            <p class="reservas-eyebrow">Tu próxima aventura empieza aquí</p>
+            <h1>Reserva tu bicicleta</h1>
+            <p>Déjanos tus datos y el tipo de bicicleta que necesitas. Nos pondremos en contacto contigo para confirmar
+                la disponibilidad.</p>
+        </div>
 
-    <main>
-        <h1>Reserva tu bicicleta</h1>
+        <section class="reserva-card" aria-labelledby="reserva-titulo">
+            <h2 id="reserva-titulo">Solicita tu reserva</h2>
+            <p class="reserva-intro">Completa los campos obligatorios para que podamos atenderte.</p>
+            <form class="reserva-form">
+                <fieldset>
+                    <legend>Tus datos</legend>
+                    <div class="reserva-fields">
+                        <div class="reserva-field">
+                            <label for="nombre">Nombre completo <span aria-hidden="true">*</span></label>
+                            <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Tu nombre"
+                                required>
+                        </div>
 
-        <section>
-            <h2>Contacto</h2>
+                        <div class="reserva-field">
+                            <label for="correo">Correo electrónico <span aria-hidden="true">*</span></label>
+                            <input type="email" id="correo" name="correo" autocomplete="email"
+                                placeholder="nombre@correo.com" required>
+                        </div>
 
-            <p>
-                Para consultar la disponibilidad de las bicicletas, contáctanos al correo:
-                <a href="mailto:ruedalibre@coorporativo.so">
-                    ruedalibre@coorporativo.so
-                </a>
-            </p>
+                        <div class="reserva-field">
+                            <label for="telefono">Teléfono <span aria-hidden="true">*</span></label>
+                            <input type="tel" id="telefono" name="telefono" autocomplete="tel"
+                                placeholder="Tu número de contacto" required>
+                        </div>
+
+                        <div class="reserva-field">
+                            <label for="bicicleta">Tipo de bicicleta <span aria-hidden="true">*</span></label>
+                            <select id="bicicleta" name="bicicleta" required>
+                                <option value="" selected disabled>Selecciona una bicicleta</option>
+                                <option value="urbana">Urbana</option>
+                                <option value="montaña">Montaña</option>
+                                <option value="electrica">Eléctrica</option>
+                            </select>
+                        </div>
+
+                        <div class="reserva-field reserva-field-full">
+                            <label for="comentario">¿Tienes alguna solicitud especial?</label>
+                            <textarea id="comentario" name="comentario" rows="4"
+                                placeholder="Cuéntanos cómo podemos ayudarte (opcional)"></textarea>
+                        </div>
+                    </div>
+                    <p class="reserva-required">* Campos obligatorios</p>
+                    <button type="submit">Confirmar reserva</button>
+                </fieldset>
+            </form>
         </section>
 
-        <section>
-            <h2>Horario de atención</h2>
+        <div class="reservas-info">
+            <section class="reserva-info-card" aria-labelledby="horario-titulo">
+                <h2 id="horario-titulo">Horario de atención</h2>
+                <dl>
+                    <div>
+                        <dt>Lunes a viernes</dt>
+                        <dd>7:00 a. m. a 7:00 p. m.</dd>
+                    </div>
+                    <div>
+                        <dt>Sábados, domingos y festivos</dt>
+                        <dd>6:00 a. m. a 2:00 p. m.</dd>
+                    </div>
+                </dl>
+            </section>
 
-            <dl>
-                <dt>Lunes a viernes</dt>
-                <dd>7:00 a. m. a 7:00 p. m.</dd>
-
-                <dt>Sábados, domingos y festivos</dt>
-                <dd>6:00 a. m. a 2:00 p. m.</dd>
-            </dl>
-        </section>
+            <section class="reserva-info-card" aria-labelledby="contacto-titulo">
+                <h2 id="contacto-titulo">¿Tienes preguntas?</h2>
+                <p>Consulta la disponibilidad de bicicletas escribiéndonos a:</p>
+                <a href="mailto:ruedalibre@coorporativo.so">ruedalibre@coorporativo.so</a>
+            </section>
+        </div>
     </main>
 
     <footer>
-        
         <p>Rueda Libre</p>
         <p>
             <a href="mailto:ruedalibre@coorporativo.so">
@@ -61,7 +113,6 @@
             </a>
         </p>
         <p>&copy; 2026 Rueda Libre. Todos los derechos reservados.</p>
-
     </footer>
 </body>
 

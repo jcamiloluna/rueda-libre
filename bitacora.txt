@@ -26,3 +26,8 @@ RUTAS
         tarifas: rueda-libre/paginas/tarifas.html
         reservas: rueda-libre/paginas/reservas.html 
 
+PRACTICAR
+        Selectores
+
+
+
