@@ -29,5 +29,23 @@ RUTAS
 PRACTICAR
         Selectores
 
+PRUEBAS DEL FORMULARIO DE RESERVAS
+Resultado de revisión estática: se contrastaron los casos con los atributos de validación nativa y el orden de los controles en reservas.html.
 
+1. Enviar con todos los campos obligatorios vacíos: Rechazado por el navegador (required).
+2. Nombre de 3 caracteres ("Ana"): Aceptado por la regla de longitud mínima.
+3. Nombre de 2 caracteres ("Al"): Rechazado por minlength="3".
+4. Documento numérico de 6 dígitos: Aceptado por el patrón [0-9]{6,10}.
+5. Documento con letras ("12A456"): Rechazado por el patrón numérico.
+6. Correo con formato inválido ("usuario@"): Rechazado por type="email".
+7. Celular 3001234567: Aceptado; cumple el patrón 3[0-9]{9}.
+8. Celular 1234567890: Rechazado; no empieza por 3.
+9. Celular 300123: Rechazado; no tiene 10 dígitos.
+10. Fecha 2026-11-01 y 2026-12-31: Aceptadas como límites del rango.
+11. Fecha 2026-10-31 y 2027-01-01: Rechazadas por estar fuera del rango permitido.
+12. Bicicleta y plan sin selección: Rechazados por required en ambos selectores.
+13. Cantidad 1 y 6: Aceptadas como límites; cantidad 0 o 7: Rechazada por min/max.
+14. Comentario de 300 caracteres: Aceptado; caracteres adicionales limitados por maxlength="300".
+15. Políticas sin aceptar: Envío rechazado por required en la casilla.
+16. Orden de teclado revisado estáticamente: los controles enfocables siguen el orden lógico del DOM y no usan tabindex personalizado; queda pendiente la comprobación interactiva con Tab y Shift+Tab.
 

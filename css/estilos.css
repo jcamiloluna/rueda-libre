@@ -178,6 +178,10 @@ footer a:hover {
     border: 0;
 }
 
+.reserva-form fieldset + fieldset {
+    margin-top: 24px;
+}
+
 .reserva-form legend {
     margin-bottom: 16px;
     color: #26382a;
@@ -211,7 +215,7 @@ footer a:hover {
     color: #ee4029;
 }
 
-.reserva-field input,
+.reserva-field input:not([type="checkbox"]),
 .reserva-field select,
 .reserva-field textarea {
     box-sizing: border-box;
@@ -230,11 +234,44 @@ footer a:hover {
     resize: vertical;
 }
 
+.reserva-field small {
+    color: #5b6c6b;
+    line-height: 1.4;
+}
+
 .reserva-field input:focus,
 .reserva-field select:focus,
 .reserva-field textarea:focus {
     border-color: #06324b;
     outline: 3px solid rgb(157 190 187 / 45%);
+}
+
+.reserva-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.reserva-consent input {
+    width: 18px;
+    height: 18px;
+    margin: 2px 0 0;
+    accent-color: #06324b;
+}
+
+.reserva-consent input:focus-visible {
+    outline: 3px solid rgb(157 190 187 / 70%);
+    outline-offset: 3px;
+}
+
+.reserva-consent label {
+    color: #26382a;
+    line-height: 1.5;
+}
+
+.reserva-consent label span {
+    color: #ee4029;
 }
 
 .reserva-required {
@@ -553,8 +590,8 @@ footer a:hover {
     padding: clamp(28px, 6vw, 64px);
     border: 0;
     border-radius: 16px;
-    background: linear-gradient(125deg, #06324b, #195568);
-    color: #fff;
+    background: linear-gradient(125deg, #06324b, #f7d7d3);
+    color: #ffffff;
 }
 
 .inicio-hero-content {
