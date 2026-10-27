@@ -1,21 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #fffcf5;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: #b83222;
+}
+
+a:hover {
+    color: #06324b;
+}
+
 .head {
-    background-color: #9DBEBB;
-    color: white;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 15px 30px;
-    min-height: 90px;
-    border-bottom: 4px solid #9DBEBB;
+    gap: 14px;
+    padding: 14px 16px;
+    border-bottom: 4px solid #9dbebb;
+    background: #9dbebb;
+    color: #fff;
+    text-align: center;
 }
 
 .head-marca {
     display: flex;
     align-items: center;
-    gap: 15px;
+    justify-content: center;
+    gap: 12px;
 }
 
 .head-marca a {
@@ -23,63 +47,52 @@
 }
 
 .head img {
-    display: block;
-    width: 90px;
-    height: auto;
+    width: 64px;
     filter: brightness(0) invert(1);
 }
 
 .head h1 {
     margin: 0;
-}
-
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: #fffcf5;
-    border: 1px solid #cccccc;
-    color: #333333;
+    font-size: clamp(1.25rem, 5vw, 1.8rem);
 }
 
 nav {
-    background-color: #06324b;
+    width: 100%;
     padding: 10px;
-    flex: 0 1 auto;
-    min-width: 0;
+    background: #06324b;
 }
 
 nav ul {
-    list-style: none;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px 18px;
     margin: 0;
     padding: 0;
+    list-style: none;
 }
 
 nav a {
-    color: white;
+    color: #fff;
     text-decoration: none;
 }
 
-nav a:hover {
-    color: #9DBEBB;
+nav a:hover,
+nav a:focus-visible {
+    color: #a5d6a7;
 }
 
 main {
-    padding: 20px;
+    padding: 20px 16px;
 }
 
 section {
-    background-color: white;
-    padding: 20px;
     margin-bottom: 20px;
-    border: 1px solid #dddddd;
+    padding: 20px;
+    border: 1px solid #ddd;
     border-radius: 8px;
+    background: #fff;
 }
 
 h2 {
@@ -90,34 +103,16 @@ h3 {
     color: #5b6c6b;
 }
 
-a {
-    color: #ee4029;
-}
-
-a:hover {
-    color: #9DBEBB;
-}
-
-article img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
 footer {
-    background-color: #9DBEBB;
-    color: white;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 24px;
-    padding: 24px 30px;
+    flex-direction: column;
+    gap: 18px;
+    padding: 24px 20px;
+    background: #9dbebb;
+    color: #fff;
 }
 
 footer > div {
-    flex: 1 1 200px;
     min-width: 0;
 }
 
@@ -131,7 +126,7 @@ footer p:last-child {
 }
 
 footer a {
-    color: white;
+    color: #fff;
     overflow-wrap: anywhere;
 }
 
@@ -140,15 +135,20 @@ footer a:hover {
 }
 
 .reservas-main {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 42px 24px 56px;
+    padding: 30px 16px 40px;
+}
+
+.reservas-layout {
+    display: grid;
+    gap: 24px;
 }
 
 .reservas-heading {
-    max-width: 680px;
+    max-width: 760px;
     margin: 0 auto 28px;
-    text-align: center;
+    text-align: left;
 }
 
 .reservas-heading h1 {
@@ -163,10 +163,12 @@ footer a:hover {
     line-height: 1.6;
 }
 
-.reservas-eyebrow {
-    margin: 0;
+.reservas-eyebrow,
+.tarifas-eyebrow,
+.inicio-eyebrow {
+    margin: 0 0 8px;
     color: #ee4029;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -174,16 +176,21 @@ footer a:hover {
 
 .reserva-card,
 .reserva-info-card {
-    background: #fff;
+    margin: 0;
     border: 1px solid #e2e8e7;
     border-radius: 14px;
+    background: #fff;
     box-shadow: 0 8px 24px rgb(6 50 75 / 8%);
 }
 
 .reserva-card {
-    max-width: 760px;
-    margin: 0 auto 24px;
-    padding: 30px;
+    padding: 22px 18px;
+}
+
+.reserva-card-heading {
+    margin-bottom: 24px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #e2e8e7;
 }
 
 .reserva-card h2,
@@ -192,8 +199,12 @@ footer a:hover {
     color: #06324b;
 }
 
+.reserva-card-heading .reservas-eyebrow {
+    margin-bottom: 6px;
+}
+
 .reserva-intro {
-    margin: 0 0 24px;
+    margin: 0;
     color: #5b6c6b;
 }
 
@@ -217,12 +228,13 @@ footer a:hover {
 
 .reserva-fields {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     gap: 18px;
 }
 
 .reserva-field {
     display: flex;
+    min-width: 0;
     flex-direction: column;
     gap: 7px;
 }
@@ -237,14 +249,14 @@ footer a:hover {
     font-weight: 700;
 }
 
-.reserva-field label span {
+.reserva-field label span,
+.reserva-consent label span {
     color: #ee4029;
 }
 
 .reserva-field input:not([type="checkbox"]),
 .reserva-field select,
 .reserva-field textarea {
-    box-sizing: border-box;
     width: 100%;
     min-height: 46px;
     padding: 11px 12px;
@@ -282,6 +294,7 @@ footer a:hover {
 .reserva-consent input {
     width: 18px;
     height: 18px;
+    flex: 0 0 auto;
     margin: 2px 0 0;
     accent-color: #06324b;
 }
@@ -296,17 +309,8 @@ footer a:hover {
     line-height: 1.5;
 }
 
-.reserva-consent label span {
-    color: #ee4029;
-}
-
-.reserva-required {
-    margin: 16px 0;
-    color: #5b6c6b;
-    font-size: 0.9rem;
-}
-
 .reserva-form button {
+    width: 100%;
     min-height: 48px;
     padding: 12px 22px;
     border: 0;
@@ -316,12 +320,10 @@ footer a:hover {
     cursor: pointer;
     font: inherit;
     font-weight: 700;
-    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .reserva-form button:hover {
     background: #c93220;
-    transform: translateY(-1px);
 }
 
 .reserva-form button:focus-visible {
@@ -331,12 +333,12 @@ footer a:hover {
 
 .reservas-info {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
 }
 
 .reserva-info-card {
-    padding: 24px;
+    padding: 22px;
 }
 
 .reserva-info-card dl {
@@ -365,38 +367,23 @@ footer a:hover {
     overflow-wrap: anywhere;
 }
 
-@media (max-width: 600px) {
-    .reservas-main {
-        padding: 30px 16px 40px;
-    }
-
-    .reserva-card {
-        padding: 22px 18px;
-    }
-
-    .reserva-fields,
-    .reservas-info {
-        grid-template-columns: 1fr;
-    }
-
-    .reserva-field-full {
-        grid-column: auto;
-    }
-
-    .reserva-form button {
-        width: 100%;
-    }
+.reserva-checklist {
+    display: grid;
+    gap: 12px;
+    margin: 16px 0;
+    padding-left: 20px;
+    color: #5b6c6b;
+    line-height: 1.5;
 }
 
 .tarifas-main {
-    max-width: 1100px;
+    max-width: 1160px;
     margin: 0 auto;
-    padding: 42px 24px 56px;
+    padding: 30px 16px 40px;
 }
 
 .tarifas-heading {
-    max-width: 700px;
-    margin: 0 auto 32px;
+    margin: 0 auto 28px;
     text-align: center;
 }
 
@@ -416,18 +403,9 @@ footer a:hover {
     margin: 0;
 }
 
-.tarifas-eyebrow {
-    margin: 0;
-    color: #ee4029;
-    font-size: 0.82rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-}
-
 .tarifas-card {
     margin-bottom: 24px;
-    padding: 28px;
+    padding: 20px 14px;
     border: 1px solid #e2e8e7;
     border-radius: 14px;
     background: #fff;
@@ -436,9 +414,8 @@ footer a:hover {
 
 .tarifas-section-heading {
     display: flex;
-    align-items: end;
-    justify-content: space-between;
-    gap: 20px;
+    flex-direction: column;
+    gap: 8px;
     margin-bottom: 18px;
 }
 
@@ -448,51 +425,119 @@ footer a:hover {
     color: #06324b;
 }
 
+.taller-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: center;
+    gap: 20px;
+}
+
+.taller-section > img {
+    width: 100%;
+    max-height: 260px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.taller-content h2 {
+    margin: 4px 0 10px;
+    color: #06324b;
+}
+
+.taller-content > p:not(.inicio-eyebrow) {
+    color: #5b6c6b;
+    line-height: 1.6;
+}
+
+.taller-content a {
+    color: #b83222;
+    font-weight: 700;
+    text-underline-offset: 3px;
+}
+
+.taller-content a:hover {
+    color: #06324b;
+}
+
 .tarifas-section-heading > p {
-    margin: 0 0 3px;
-    text-align: right;
+    margin: 0;
 }
 
 .tarifas-table-wrap {
-    overflow-x: auto;
-    border: 1px solid #e2e8e7;
-    border-radius: 9px;
+    overflow: visible;
 }
 
 .tarifas-table {
+    display: block;
     width: 100%;
     border-collapse: collapse;
     text-align: left;
 }
 
 .tarifas-table caption {
-    padding: 12px 14px;
+    padding: 12px 10px;
+    border-radius: 8px 8px 0 0;
     background: #f3f7f6;
     color: #5b6c6b;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-align: left;
+}
+
+.tarifas-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
+
+.tarifas-table tbody {
+    display: grid;
+    gap: 12px;
+    padding-top: 12px;
+}
+
+.tarifas-table tbody tr {
+    display: grid;
+    padding: 8px 10px;
+    border: 1px solid #e2e8e7;
+    border-radius: 8px;
+    background: #fff;
 }
 
 .tarifas-table th,
 .tarifas-table td {
-    padding: 14px 16px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+    padding: 7px 0;
     border-top: 1px solid #e2e8e7;
-    white-space: nowrap;
+    font-size: 0.88rem;
+    text-align: right;
+}
+
+.tarifas-table tbody th {
+    display: block;
+    padding: 4px 0 8px;
+    border-top: 0;
+    color: #26382a;
+    font-size: 0.98rem;
+    text-align: left;
+}
+
+.tarifas-table td::before {
+    color: #5b6c6b;
+    content: attr(data-label);
+    font-weight: 400;
+    text-align: left;
 }
 
 .tarifas-table thead th {
     background: #06324b;
     color: #fff;
     font-size: 0.9rem;
-}
-
-.tarifas-table tbody th {
-    color: #26382a;
-    font-weight: 700;
-}
-
-.tarifas-table tbody tr:nth-child(even) {
-    background: #f8faf9;
 }
 
 .tarifas-price {
@@ -502,9 +547,9 @@ footer a:hover {
 
 .nivel-badge {
     display: inline-block;
-    padding: 5px 10px;
+    padding: 4px 8px;
     border-radius: 999px;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 700;
 }
 
@@ -525,9 +570,9 @@ footer a:hover {
 
 .tarifas-extra {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    padding: 28px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+    padding: 22px 18px;
     border-radius: 14px;
     background: #06324b;
     color: #fff;
@@ -548,8 +593,8 @@ footer a:hover {
 }
 
 .tarifas-que-llevar {
-    padding-left: 24px;
-    border-left: 1px solid rgb(255 255 255 / 25%);
+    padding-top: 18px;
+    border-top: 1px solid rgb(255 255 255 / 25%);
 }
 
 .tarifas-que-llevar h3 {
@@ -558,79 +603,34 @@ footer a:hover {
 
 .tarifas-que-llevar ul {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px 20px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
     margin-bottom: 0;
     padding-left: 20px;
     color: #e0e9e8;
 }
 
-@media (max-width: 700px) {
-    .tarifas-main {
-        padding: 30px 16px 40px;
-    }
-
-    .tarifas-card,
-    .tarifas-extra {
-        padding: 22px 18px;
-    }
-
-    .tarifas-section-heading {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .tarifas-section-heading > p {
-        text-align: left;
-    }
-
-    .tarifas-extra {
-        grid-template-columns: 1fr;
-        gap: 18px;
-    }
-
-    .tarifas-que-llevar {
-        padding: 18px 0 0;
-        border-top: 1px solid rgb(255 255 255 / 25%);
-        border-left: 0;
-    }
-}
-
-@media (max-width: 420px) {
-    .tarifas-que-llevar ul {
-        grid-template-columns: 1fr;
-    }
-}
-
 .inicio-main {
-    max-width: 1120px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 32px 24px 56px;
+    padding: 24px 16px 40px;
 }
 
 .inicio-hero {
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
     align-items: center;
-    min-height: 350px;
-    padding: clamp(28px, 6vw, 64px);
+    gap: 24px;
+    min-height: 0;
+    padding: 28px 22px;
     border: 0;
     border-radius: 16px;
-    background: linear-gradient(125deg, #06324b, #f7d7d3);
-    color: #ffffff;
+    background: linear-gradient(125deg, #06324b, #39677a);
+    color: #fff;
 }
 
 .inicio-hero-content {
     max-width: 720px;
-}
-
-.inicio-eyebrow {
-    margin: 0 0 8px;
-    color: #ee4029;
-    font-size: 0.82rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
 }
 
 .inicio-hero .inicio-eyebrow {
@@ -653,6 +653,13 @@ footer a:hover {
     line-height: 1.65;
 }
 
+.inicio-hero-image {
+    width: 100%;
+    max-height: 320px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
 .inicio-actions {
     display: flex;
     flex-wrap: wrap;
@@ -671,17 +678,13 @@ footer a:hover {
     font-weight: 700;
     text-align: center;
     text-decoration: none;
-    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-}
-
-.inicio-button:hover {
-    transform: translateY(-1px);
 }
 
 .inicio-button:focus-visible,
 .inicio-contact-email:focus-visible,
-.inicio-service-content a:focus-visible,
-.inicio-text-link:focus-visible {
+.inicio-text-link:focus-visible,
+.flota-card a:focus-visible,
+.taller-content a:focus-visible {
     outline: 3px solid #9dbebb;
     outline-offset: 3px;
 }
@@ -709,8 +712,8 @@ footer a:hover {
 
 .inicio-benefits {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px 24px;
+    flex-direction: column;
+    gap: 8px;
     margin: 24px 0 0;
     padding: 0;
     color: #e0e9e8;
@@ -725,8 +728,9 @@ footer a:hover {
 }
 
 .inicio-section {
-    margin-top: 30px;
-    padding: 32px;
+    margin-top: 24px;
+    margin-bottom: 0;
+    padding: 24px 18px;
     border: 1px solid #e2e8e7;
     border-radius: 14px;
     background: #fff;
@@ -734,7 +738,6 @@ footer a:hover {
 }
 
 .inicio-section-heading {
-    max-width: 700px;
     margin: 0 auto 24px;
     text-align: center;
 }
@@ -751,47 +754,121 @@ footer a:hover {
     line-height: 1.6;
 }
 
-.inicio-services {
+.flota-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: 20px;
 }
 
-.inicio-service-card {
+.flota-card {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
     overflow: hidden;
     border: 1px solid #e2e8e7;
     border-radius: 10px;
     background: #fff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-.inicio-service-card img {
-    display: block;
+.flota-card > img {
+    width: 100%;
+    height: 180px;
+    padding: 10px;
+    background: #f7f9f8;
+    object-fit: contain;
+    transition: transform 0.25s ease;
+}
+
+.flota-card:hover,
+.flota-card:focus-within,
+.ruta-card:hover,
+.ruta-card:focus-within {
+    transform: translateY(-4px);
+    border-color: #9dbebb;
+    box-shadow: 0 14px 30px rgb(6 50 75 / 16%);
+}
+
+.flota-card:hover > img,
+.flota-card:focus-within > img,
+.ruta-card:hover img,
+.ruta-card:focus-within img {
+    transform: scale(1.035);
+}
+
+.flota-card-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 18px;
+}
+
+.flota-card h3 {
+    margin: 0 0 10px;
+    color: #06324b;
+}
+
+.flota-card p {
+    margin: 0 0 14px;
+    color: #5b6c6b;
+    line-height: 1.5;
+}
+
+.flota-card .flota-precio {
+    color: #06324b;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.flota-precio span {
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+.flota-card a {
+    margin-top: auto;
+    color: #b83222;
+    font-weight: 700;
+    line-height: 1.5;
+    text-underline-offset: 3px;
+}
+
+.tarifas-rutas-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+}
+
+.ruta-card {
+    overflow: hidden;
+    border: 1px solid #e2e8e7;
+    border-radius: 10px;
+    background: #fff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.ruta-card img {
     width: 100%;
     height: 210px;
     object-fit: cover;
+    transition: transform 0.25s ease;
 }
 
-.inicio-service-content {
-    display: flex;
-    min-height: 225px;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
+.ruta-card > div {
+    padding: 18px;
 }
 
-.inicio-service-content h3 {
-    margin: 0 0 10px;
+.ruta-card h3 {
+    margin: 0 0 8px;
     color: #06324b;
-    font-size: 1.15rem;
 }
 
-.inicio-service-content p {
-    margin: 0 0 18px;
+.ruta-card p {
+    margin: 0 0 12px;
     color: #5b6c6b;
-    line-height: 1.6;
 }
 
-.inicio-service-content a,
 .inicio-text-link {
     margin-top: auto;
     color: #b83222;
@@ -801,9 +878,37 @@ footer a:hover {
     text-underline-offset: 3px;
 }
 
-.inicio-service-content a:hover,
-.inicio-text-link:hover {
+.ruta-card a {
+    color: #b83222;
+    font-weight: 700;
+    text-underline-offset: 3px;
+}
+
+.ruta-card a:hover {
     color: #06324b;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .flota-card,
+    .flota-card > img,
+    .ruta-card,
+    .ruta-card img {
+        transition: none;
+    }
+
+    .flota-card:hover,
+    .flota-card:focus-within,
+    .ruta-card:hover,
+    .ruta-card:focus-within {
+        transform: none;
+    }
+
+    .flota-card:hover > img,
+    .flota-card:focus-within > img,
+    .ruta-card:hover img,
+    .ruta-card:focus-within img {
+        transform: none;
+    }
 }
 
 .inicio-howto {
@@ -812,7 +917,7 @@ footer a:hover {
 
 .inicio-steps {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     gap: 14px;
     margin: 24px 0;
     padding: 0;
@@ -822,7 +927,7 @@ footer a:hover {
 }
 
 .inicio-steps li {
-    min-height: 116px;
+    min-height: 0;
     padding: 18px;
     border-radius: 9px;
     background: #f3f7f6;
@@ -847,11 +952,11 @@ footer a:hover {
 
 .inicio-contact {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: minmax(0, 1fr);
     align-items: center;
-    gap: 24px;
-    margin-top: 30px;
-    padding: 32px;
+    gap: 20px;
+    margin-top: 24px;
+    padding: 24px 18px;
     border-radius: 14px;
     background: #26382a;
     color: #fff;
@@ -874,7 +979,7 @@ footer a:hover {
 .inicio-contact-actions {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 14px;
 }
 
@@ -894,55 +999,241 @@ footer a:hover {
     overflow-wrap: anywhere;
 }
 
-@media (max-width: 850px) {
-    .inicio-services {
+@media (min-width: 768px) {
+    .head {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 12px 24px;
+        text-align: left;
+    }
+
+    .head img {
+        width: 72px;
+    }
+
+    nav {
+        width: auto;
+        flex: 0 1 auto;
+    }
+
+    nav ul {
+        gap: 12px 20px;
+    }
+
+    main {
+        padding: 28px 24px;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 24px;
+    }
+
+    footer > div {
+        flex: 1 1 0;
+    }
+
+    .reserva-card,
+    .reserva-info-card {
+        padding: 28px;
+    }
+
+    .reserva-fields {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .inicio-service-content {
-        min-height: 200px;
+    .reserva-field-full {
+        grid-column: 1 / -1;
+    }
+
+    .reserva-form button {
+        width: auto;
+    }
+
+    .tarifas-main {
+        padding: 40px 24px 52px;
+    }
+
+    .tarifas-card {
+        padding: 28px;
+    }
+
+    .tarifas-section-heading {
+        flex-direction: row;
+        align-items: end;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .tarifas-section-heading > p {
+        text-align: right;
+    }
+
+    .tarifas-table-wrap {
+        overflow-x: auto;
+        border: 1px solid #e2e8e7;
+        border-radius: 9px;
+    }
+
+    .tarifas-table {
+        display: table;
+    }
+
+    .tarifas-table caption {
+        padding: 12px 14px;
+        font-size: 0.9rem;
+    }
+
+    .tarifas-table thead {
+        position: static;
+        width: auto;
+        height: auto;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+        clip-path: none;
+    }
+
+    .tarifas-table tbody {
+        display: table-row-group;
+        padding: 0;
+    }
+
+    .tarifas-table tbody tr {
+        display: table-row;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+    }
+
+    .tarifas-table th,
+    .tarifas-table td {
+        display: table-cell;
+        padding: 14px 12px;
+        border-top: 1px solid #e2e8e7;
+        font-size: 0.9rem;
+        text-align: left;
+        white-space: nowrap;
+    }
+
+    .tarifas-table td::before {
+        content: none;
+    }
+
+    .tarifas-table tbody th {
+        padding: 14px 12px;
+        border-top: 1px solid #e2e8e7;
+        font-size: 0.9rem;
+    }
+
+    .tarifas-extra {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        padding: 28px;
+    }
+
+    .tarifas-que-llevar {
+        padding-top: 0;
+        padding-left: 24px;
+        border-top: 0;
+        border-left: 1px solid rgb(255 255 255 / 25%);
+    }
+
+    .tarifas-que-llevar ul {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px 20px;
+    }
+
+    .inicio-main {
+        padding: 32px 24px 52px;
+    }
+
+    .inicio-hero {
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+        min-height: 350px;
+        padding: 40px;
+    }
+
+    .inicio-hero-image {
+        max-height: 360px;
+    }
+
+    .inicio-benefits {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px 24px;
+    }
+
+    .inicio-section {
+        padding: 30px 24px;
+    }
+
+    .taller-section {
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    }
+
+    .tarifas-rutas-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .inicio-steps {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-}
 
-@media (max-width: 600px) {
-    .inicio-main {
-        padding: 24px 16px 40px;
-    }
-
-    .inicio-hero {
-        min-height: 0;
-        padding: 28px 22px;
-    }
-
-    .inicio-benefits {
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .inicio-section,
     .inicio-contact {
-        padding: 24px 18px;
-    }
-
-    .inicio-services,
-    .inicio-steps,
-    .inicio-contact {
-        grid-template-columns: 1fr;
-    }
-
-    .inicio-service-content {
-        min-height: 0;
-    }
-
-    .inicio-service-content a {
-        margin-top: 0;
+        grid-template-columns: 1.2fr 1fr;
+        padding: 30px 24px;
     }
 
     .inicio-contact-actions {
-        align-items: stretch;
+        align-items: flex-start;
+    }
+}
+
+@media (min-width: 1200px) {
+    .head {
+        padding-right: max(24px, calc((100% - 1152px) / 2));
+        padding-left: max(24px, calc((100% - 1152px) / 2));
+    }
+
+    .reservas-main {
+        padding: 42px 24px 56px;
+    }
+
+    .reservas-layout {
+        grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+        align-items: start;
+        gap: 24px;
+    }
+
+    .reservas-info {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .inicio-main {
+        padding-top: 36px;
+    }
+
+    .inicio-hero {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+        padding: 56px;
+    }
+
+    .inicio-section {
+        padding: 32px;
+    }
+
+    .taller-section {
+        gap: 32px;
+    }
+
+    .tarifas-rutas-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .inicio-steps {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 }

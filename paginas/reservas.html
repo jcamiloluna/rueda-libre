@@ -34,125 +34,143 @@
 
     <main class="reservas-main">
         <div class="reservas-heading">
-            <p class="reservas-eyebrow">Tu próxima aventura empieza aquí</p>
+            <p class="reservas-eyebrow">Planea tu próxima salida</p>
             <h1>Reserva tu bicicleta</h1>
-            <p>Déjanos tus datos y el tipo de bicicleta que necesitas. Nos pondremos en contacto contigo para confirmar
-                la disponibilidad.</p>
+            <p>Cuéntanos qué bicicleta necesitas y cuándo quieres usarla. Revisaremos la disponibilidad y nos pondremos
+                en contacto contigo.</p>
         </div>
 
-        <section class="reserva-card" aria-labelledby="reserva-titulo">
-            <h2 id="reserva-titulo">Solicita tu reserva</h2>
-            <p class="reserva-intro">Completa los campos obligatorios para que podamos atenderte.</p>
-            <form class="reserva-form">
-                <fieldset>
-                    <legend>Datos de contacto</legend>
-                    <div class="reserva-fields">
-                        <div class="reserva-field">
-                            <label for="nombre">Nombre completo <span aria-hidden="true">*</span></label>
-                            <input type="text" id="nombre" name="nombre" autocomplete="name"
-                                placeholder="Tu nombre completo" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" minlength="3"
-                                required>
-                        </div>
-
-                        <div class="reserva-field">
-                            <label for="documento">Documento <span aria-hidden="true">*</span></label>
-                            <input type="text" id="documento" name="documento" inputmode="numeric" autocomplete="off"
-                                pattern="[0-9]{6,10}" maxlength="10" placeholder="Entre 6 y 10 dígitos"
-                                aria-describedby="documento-ayuda" required>
-                            <small id="documento-ayuda">Escribe solo números, entre 6 y 10 dígitos.</small>
-                        </div>
-
-                        <div class="reserva-field">
-                            <label for="correo">Correo electrónico <span aria-hidden="true">*</span></label>
-                            <input type="email" id="correo" name="correo" autocomplete="email"
-                                placeholder="nombre@correo.com" required>
-                        </div>
-
-                        <div class="reserva-field">
-                            <label for="celular">Celular <span aria-hidden="true">*</span></label>
-                            <input type="tel" id="celular" name="celular" autocomplete="tel" inputmode="numeric"
-                                pattern="3[0-9]{9}" minlength="10" maxlength="10" placeholder="3001234567"
-                                aria-describedby="celular-ayuda" required>
-                            <small id="celular-ayuda">10 dígitos; debe empezar por 3.</small>
-                        </div>
-                    </div>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Detalles del alquiler</legend>
-                    <div class="reserva-fields">
-                        <div class="reserva-field">
-                            <label for="fecha">Fecha del alquiler <span aria-hidden="true">*</span></label>
-                            <input type="date" id="fecha" name="fecha" min="2026-11-01" max="2026-12-31"
-                                aria-describedby="fecha-ayuda" required>
-                            <small id="fecha-ayuda">Disponible del 1 de noviembre al 31 de diciembre de 2026.</small>
-                        </div>
-
-                        <div class="reserva-field">
-                            <label for="bicicleta">Tipo de bicicleta <span aria-hidden="true">*</span></label>
-                            <select id="bicicleta" name="bicicleta" required>
-                                <option value="" selected disabled>Selecciona una bicicleta</option>
-                                <option value="urbana">Urbana</option>
-                                <option value="montaña">Montaña</option>
-                                <option value="electrica">Eléctrica</option>
-                            </select>
-                        </div>
-
-                        <div class="reserva-field">
-                            <label for="plan">Plan de alquiler <span aria-hidden="true">*</span></label>
-                            <select id="plan" name="plan" required>
-                                <option value="" selected disabled>Selecciona un plan</option>
-                                <option value="hora">1 hora</option>
-                                <option value="medio-dia">Medio día (4 horas)</option>
-                                <option value="dia-completo">Día completo</option>
-                            </select>
-                        </div>
-
-                        <div class="reserva-field">
-                            <label for="cantidad">Cantidad de bicicletas <span aria-hidden="true">*</span></label>
-                            <input type="number" id="cantidad" name="cantidad" min="1" max="6" step="1"
-                                placeholder="De 1 a 6" required>
-                        </div>
-
-                        <div class="reserva-field reserva-field-full">
-                            <label for="comentario">Comentarios (opcional)</label>
-                            <textarea id="comentario" name="comentario" rows="4" maxlength="300"
-                                placeholder="Cuéntanos cómo podemos ayudarte (máximo 300 caracteres)"></textarea>
-                        </div>
-                    </div>
-                </fieldset>
-
-                <div class="reserva-consent">
-                    <input type="checkbox" id="politicas" name="politicas" required>
-                    <label for="politicas">He leído y acepto las políticas de alquiler <span
-                            aria-hidden="true">*</span></label>
+        <div class="reservas-layout">
+            <section class="reserva-card" aria-labelledby="reserva-titulo">
+                <div class="reserva-card-heading">
+                    <p class="reservas-eyebrow">Solicitud de alquiler</p>
+                    <h2 id="reserva-titulo">Cuéntanos los detalles</h2>
+                    <p class="reserva-intro">Los campos con * son obligatorios.</p>
                 </div>
+                <form class="reserva-form">
+                    <fieldset>
+                        <legend>1. Tus datos de contacto</legend>
+                        <div class="reserva-fields">
+                            <div class="reserva-field reserva-field-full">
+                                <label for="nombre">Nombre completo <span aria-hidden="true">*</span></label>
+                                <input type="text" id="nombre" name="nombre" autocomplete="name"
+                                    placeholder="Tu nombre completo" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" minlength="3"
+                                    required>
+                            </div>
 
-                <p class="reserva-required">* Campos obligatorios</p>
-                <button type="submit">Confirmar reserva</button>
-            </form>
-        </section>
+                            <div class="reserva-field">
+                                <label for="documento">Documento <span aria-hidden="true">*</span></label>
+                                <input type="text" id="documento" name="documento" inputmode="numeric"
+                                    autocomplete="off" pattern="[0-9]{6,10}" maxlength="10"
+                                    placeholder="Entre 6 y 10 dígitos" aria-describedby="documento-ayuda" required>
+                                <small id="documento-ayuda">Solo números, entre 6 y 10 dígitos.</small>
+                            </div>
 
-        <div class="reservas-info">
-            <section class="reserva-info-card" aria-labelledby="horario-titulo">
-                <h2 id="horario-titulo">Horario de atención</h2>
-                <dl>
-                    <div>
-                        <dt>Lunes a viernes</dt>
-                        <dd>7:00 a. m. a 7:00 p. m.</dd>
+                            <div class="reserva-field">
+                                <label for="celular">Celular <span aria-hidden="true">*</span></label>
+                                <input type="tel" id="celular" name="celular" autocomplete="tel" inputmode="numeric"
+                                    pattern="3[0-9]{9}" minlength="10" maxlength="10" placeholder="3001234567"
+                                    aria-describedby="celular-ayuda" required>
+                                <small id="celular-ayuda">10 dígitos; debe empezar por 3.</small>
+                            </div>
+
+                            <div class="reserva-field reserva-field-full">
+                                <label for="correo">Correo electrónico <span aria-hidden="true">*</span></label>
+                                <input type="email" id="correo" name="correo" autocomplete="email"
+                                    placeholder="nombre@correo.com" required>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>2. Tu alquiler</legend>
+                        <div class="reserva-fields">
+                            <div class="reserva-field">
+                                <label for="bicicleta">Tipo de bicicleta <span aria-hidden="true">*</span></label>
+                                <select id="bicicleta" name="bicicleta" required>
+                                    <option value="" selected disabled>Selecciona una bicicleta</option>
+                                    <option value="urbana-clasica">Urbana Clásica</option>
+                                    <option value="urbana-plegable">Urbana Plegable</option>
+                                    <option value="montana-trail">Montaña Trail</option>
+                                    <option value="gravel-aventura">Gravel Aventura</option>
+                                    <option value="electrica-urbana">Eléctrica Urbana</option>
+                                    <option value="infantil">Infantil</option>
+                                    <option value="tandem">Tándem</option>
+                                </select>
+                            </div>
+
+                            <div class="reserva-field">
+                                <label for="plan">Duración <span aria-hidden="true">*</span></label>
+                                <select id="plan" name="plan" required>
+                                    <option value="" selected disabled>Selecciona una duración</option>
+                                    <option value="hora">1 hora</option>
+                                    <option value="medio-dia">Medio día (4 horas)</option>
+                                    <option value="dia-completo">Día completo</option>
+                                </select>
+                            </div>
+
+                            <div class="reserva-field">
+                                <label for="fecha">Fecha del alquiler <span aria-hidden="true">*</span></label>
+                                <input type="date" id="fecha" name="fecha" min="2026-11-01" max="2026-12-31"
+                                    aria-describedby="fecha-ayuda" required>
+                                <small id="fecha-ayuda">Disponible del 1 de noviembre al 31 de diciembre de 2026.</small>
+                            </div>
+
+                            <div class="reserva-field">
+                                <label for="cantidad">Cantidad de bicicletas <span aria-hidden="true">*</span></label>
+                                <input type="number" id="cantidad" name="cantidad" min="1" max="6" step="1"
+                                    placeholder="De 1 a 6" required>
+                            </div>
+
+                            <div class="reserva-field reserva-field-full">
+                                <label for="comentario">¿Alguna solicitud adicional? (opcional)</label>
+                                <textarea id="comentario" name="comentario" rows="4" maxlength="300"
+                                    placeholder="Déjanos un comentario (máximo 300 caracteres)"></textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="reserva-consent">
+                        <input type="checkbox" id="politicas" name="politicas" required>
+                        <label for="politicas">He leído y acepto las políticas de alquiler <span
+                                aria-hidden="true">*</span></label>
                     </div>
-                    <div>
-                        <dt>Sábados, domingos y festivos</dt>
-                        <dd>6:00 a. m. a 2:00 p. m.</dd>
-                    </div>
-                </dl>
+
+                    <button type="submit">Enviar solicitud de reserva</button>
+                </form>
             </section>
 
-            <section class="reserva-info-card" aria-labelledby="contacto-titulo">
-                <h2 id="contacto-titulo">¿Tienes preguntas?</h2>
-                <p>Consulta la disponibilidad de bicicletas escribiéndonos a:</p>
-                <a href="mailto:ruedalibre@coorporativo.so">ruedalibre@coorporativo.so</a>
-            </section>
+            <aside class="reservas-info" aria-label="Información para tu reserva">
+                <section class="reserva-info-card" aria-labelledby="reserva-ayuda-titulo">
+                    <h2 id="reserva-ayuda-titulo">Antes de enviar</h2>
+                    <ul class="reserva-checklist">
+                        <li>Elige el modelo y la duración del alquiler.</li>
+                        <li>Indica la fecha y cuántas bicicletas necesitas.</li>
+                        <li>Incluimos casco y candado en el alquiler.</li>
+                    </ul>
+                    <a href="tarifas.html">Consulta las tarifas</a>
+                </section>
+
+                <section class="reserva-info-card" aria-labelledby="horario-titulo">
+                    <h2 id="horario-titulo">Horario de atención</h2>
+                    <dl>
+                        <div>
+                            <dt>Lunes a viernes</dt>
+                            <dd>7:00 a. m. a 7:00 p. m.</dd>
+                        </div>
+                        <div>
+                            <dt>Fines de semana y festivos</dt>
+                            <dd>6:00 a. m. a 2:00 p. m.</dd>
+                        </div>
+                    </dl>
+                </section>
+
+                <section class="reserva-info-card" aria-labelledby="contacto-titulo">
+                    <h2 id="contacto-titulo">¿Necesitas ayuda?</h2>
+                    <p>Escríbenos y te ayudaremos a elegir tu bicicleta.</p>
+                    <a href="mailto:ruedalibre@coorporativo.so">ruedalibre@coorporativo.so</a>
+                </section>
+            </aside>
         </div>
     </main>
 

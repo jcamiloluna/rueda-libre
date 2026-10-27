@@ -67,3 +67,62 @@ DIA 1:
 Pruebas realizadas: comprobé el encabezado, el menú y el pie de página en las tres páginas. Al estrechar la ventana.
 
 
+                                                                MINI RETO 2: NUESTRA FLOTA
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+1. Añadí la sección "Nuestra flota" a inicio con siete artículos: Urbana Clásica, Urbana Plegable, Montaña Trail,
+   Gravel Aventura, Eléctrica Urbana, Infantil y Tándem. Cada tarjeta incluye imagen, descripción, precio por hora y
+   enlace para reservar.
+2. La cuadrícula usa display: grid, repeat(auto-fit, minmax(230px, 1fr)) y gap: 20px. El navegador calcula la cantidad
+   de columnas según el ancho disponible; agregar el séptimo artículo no requiere cambiar el CSS.
+3. Las tarjetas conservan padding, borde y esquinas redondeadas. Su contenido usa Flexbox en columna y margin-top: auto
+   en el enlace para mantener "Reservar" al final; Grid estira las tarjetas de cada fila a la misma altura.
+4. Columnas calculadas a partir del ancho disponible de la sección y el mínimo de 230 px más el gap de 20 px:
+   - 1280 px: 4 columnas.
+   - 900 px: 3 columnas.
+   - 500 px: 1 columna.
+   Estas cantidades son el resultado esperado de la regla CSS; queda pendiente confirmar y registrar la observación
+   directamente en el modo dispositivo de DevTools.
+
+
+                                                                MINI RETO 3: LAYOUT EN DOS DIMENSIONES
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Decisiones de layout (una dimensión: Flexbox; dos dimensiones: Grid):
+1. Portada: Grid en escritorio para definir simultáneamente columnas de texto e imagen con unidades fr; align-items
+   centra verticalmente el contenido.
+2. Galería "Nuestras rutas": Grid con tres columnas y gap en escritorio porque distribuye tarjetas en filas y columnas.
+3. Página de reservas: Grid con columnas 2fr 1fr en escritorio para ubicar formulario e información de contacto en
+   proporción 2:1; en móvil y tablet se apilan en una columna.
+4. Fila de documento y celular: Grid de dos columnas dentro del formulario para alinear esos campos relacionados.
+5. Encabezado: Flexbox porque distribuye marca y navegación en una sola dimensión y permite reordenarlos en móvil.
+6. Pie de página: Flexbox porque organiza tres bloques en una dimensión y permite apilarlos en móvil.
+
+
+                                                                MINI RETO 4: MOBILE-FIRST
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Estilos base sin media queries: una columna, encabezado con marca arriba y menú centrado debajo, tarjetas e imágenes
+fluidas, campos del formulario apilados y tablas de tarifas convertidas a bloques legibles sin desplazamiento lateral.
+Desde 768 px se recupera el encabezado horizontal, se muestran dos columnas en contenido que lo permite y las tablas
+vuelven a su presentación tabular. Desde 1200 px se muestran las tres rutas en una fila y reservas en proporción 2:1.
+
+Problemas responsive identificados y solución aplicada:
+1. La cuadrícula fija de tarjetas podía apretar los modelos en pantallas estrechas: se cambió a auto-fit/minmax y las
+   columnas ahora dependen del espacio y del mínimo de 230 px.
+2. Las tablas de tarifas tenían encabezados y celdas que forzaban el desplazamiento horizontal en móvil: en pantallas
+   pequeñas cada fila muestra sus datos con etiquetas; en pantallas amplias se restaura la tabla normal.
+3. Encabezado, pie y layout de reservas ocupaban varias columnas en espacios pequeños: la base mobile-first los apila,
+   y solo se distribuyen en fila o en proporción 2:1 desde sus breakpoints.
+4. Las imágenes podían exceder el contenedor: se aplica max-width: 100% y height: auto globalmente, con object-fit
+   en las imágenes de tarjetas.
+
+Verificación pendiente: no se pudo abrir la página en el navegador integrado para simular los anchos, inspeccionar
+DevTools o comprobar un teléfono real. Las columnas registradas de la flota son las esperadas por el cálculo de Grid,
+no una observación confirmada en DevTools. La publicación en GitHub Pages también requiere verificar la configuración
+del repositorio y abrir la URL resultante en un celular real.
+
+Organización de contenidos: el inicio prioriza portada, flota, pasos para alquilar, taller y contacto. La galería
+"Nuestras rutas" se ubicó en Tarifas y rutas, junto a la tabla con distancias, duración, nivel y precio. La página de
+reservas separa el formulario de una columna de apoyo con indicaciones, horario y contacto; documento y celular
+aparecen juntos en escritorio. Se mantuvieron los campos obligatorios y sus reglas de validación.
