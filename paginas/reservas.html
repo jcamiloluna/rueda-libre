@@ -14,19 +14,24 @@
 </head>
 
 <body>
+
     <header class="head">
-        <a href="../index.html">
-            <img src="../img/logo.png" alt="Logo de Rueda Libre" width="90">
-        </a>
-        <h1>RUEDA LIBRE</h1>
+        <div class="head-marca">
+            <a href="../index.html">
+                <img src="../img/logo.png" alt="Logo de Rueda Libre" width="90">
+            </a>
+            <h1>RUEDA LIBRE</h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="tarifas.html">Tarifas y rutas</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <ul>
-            <li><a href="../index.html">Inicio</a></li>
-            <li><a href="tarifas.html">Tarifas y rutas</a></li>
-            <li><a href="reservas.html">Reservas</a></li>
-        </ul>
-    </nav>
+
     <main class="reservas-main">
         <div class="reservas-heading">
             <p class="reservas-eyebrow">Tu próxima aventura empieza aquí</p>
@@ -44,8 +49,9 @@
                     <div class="reserva-fields">
                         <div class="reserva-field">
                             <label for="nombre">Nombre completo <span aria-hidden="true">*</span></label>
-                            <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Tu nombre completo" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+"
-                                minlength="3" required>
+                            <input type="text" id="nombre" name="nombre" autocomplete="name"
+                                placeholder="Tu nombre completo" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" minlength="3"
+                                required>
                         </div>
 
                         <div class="reserva-field">
@@ -151,13 +157,25 @@
     </main>
 
     <footer>
-        <p>Rueda Libre</p>
-        <p>
-            <a href="mailto:ruedalibre@coorporativo.so">
-                ruedalibre@coorporativo.so
-            </a>
-        </p>
-        <p>&copy; 2026 Rueda Libre. Todos los derechos reservados.</p>
+        <div class="footer-marca">
+            <p>Rueda Libre</p>
+            <p>&copy; 2026 Rueda Libre. Todos los derechos reservados.</p>
+        </div>
+
+        <div class="footer-contacto">
+            <p>Contacto</p>
+            <p>
+                <a href="mailto:ruedalibre@coorporativo.so">
+                    ruedalibre@coorporativo.so
+                </a>
+            </p>
+        </div>
+
+        <div class="footer-horario">
+            <p>Horario de atención</p>
+            <p>Lunes a viernes: 7:00 a. m. a 7:00 p. m.</p>
+            <p>Sábados, domingos y festivos: 6:00 a. m. a 2:00 p. m.</p>
+        </div>
     </footer>
 </body>
 

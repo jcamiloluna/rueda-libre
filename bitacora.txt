@@ -1,3 +1,5 @@
+                                                                SEMANA 1: 
+---------------------------------------------------------------------------------------------------------------------------------------------
 
 URL_COMPLETA: http://127.0.0.1:5500/index.html
 PROTOCOLO: http (version HTTP/1.1)
@@ -48,4 +50,20 @@ Resultado de revisión estática: se contrastaron los casos con los atributos de
 14. Comentario de 300 caracteres: Aceptado; caracteres adicionales limitados por maxlength="300".
 15. Políticas sin aceptar: Envío rechazado por required en la casilla.
 16. Orden de teclado revisado estáticamente: los controles enfocables siguen el orden lógico del DOM y no usan tabindex personalizado; queda pendiente la comprobación interactiva con Tab y Shift+Tab.
+
+
+                                                                SEMANA 2: 
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+DIA 1:
+        1. Agrupé el logo y el nombre de Rueda Libre dentro de un contenedor .head-marca.
+        2. Coloqué el menú de navegación dentro del encabezado.
+        3. Utilicé display: flex, justify-content: space-between y align-items: center para distribuir y alinear la marca y el menú.
+        4. Utilicé flex-wrap: wrap y gap para permitir que los enlaces se acomoden cuando disminuye el espacio disponible.
+        5. Organicé el pie de página en tres bloques: marca, contacto y horario de atención.
+        6. Apliqué los estilos compartidos para mantener una apariencia uniforme en las tres páginas.
+        7. Elegí Flexbox para el encabezado, el menú y el pie porque son distribuciones principalmente unidiamensionles, y necesitaba modificar elementos independientes. 
+
+Pruebas realizadas: comprobé el encabezado, el menú y el pie de página en las tres páginas. Al estrechar la ventana.
+
 
