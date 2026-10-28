@@ -8,6 +8,7 @@
     <meta name="description" content="Alquiler de bicicletas, recorridos guiados y taller básico en Medellín.">
 
     <title>Rueda Libre | Alquiler de bicicletas en Medellín</title>
+    <link rel="icon" type="image/png" href="img/icon.png">
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 
@@ -21,9 +22,10 @@
 
         <nav>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html" aria-current="page">Inicio</a></li>
                 <li><a href="paginas/tarifas.html">Tarifas y rutas</a></li>
                 <li><a href="paginas/reservas.html">Reservas</a></li>
+                <li><a href="paginas/nuestra-flota.html">Nuestra flota</a></li>
             </ul>
         </nav>
     </header>
@@ -48,74 +50,37 @@
             <img class="inicio-hero-image" src="img/img1.png" alt="Bicicleta lista para recorrer Medellín">
         </section>
 
-        <section class="inicio-section" id="flota" aria-labelledby="flota-titulo">
+        <section class="inicio-section tarifas-rutas" aria-labelledby="rutas-titulo">
             <div class="inicio-section-heading">
-                <p class="inicio-eyebrow">Encuentra tu compañera de ruta</p>
-                <h2 id="flota-titulo">Nuestra flota</h2>
-                <p>Elige la bicicleta ideal para tu recorrido. Todas incluyen casco y candado.</p>
+                <p class="inicio-eyebrow">Explora con nuestros guías</p>
+                <h2 id="rutas-titulo">Nuestras rutas</h2>
+                <p>Elige el recorrido que mejor se ajusta a tu experiencia.</p>
             </div>
-            <div class="flota-grid">
-                <article class="flota-card">
-                    <img src="img/img4.png" alt="Bicicletas disponibles para alquiler" loading="lazy">
-                    <div class="flota-card-content">
-                        <h3>Urbana Clásica</h3>
-                        <p>Cómoda y liviana para las ciclorrutas.</p>
-                        <p class="flota-precio">$10.000 <span>por hora</span></p>
-                        <a href="paginas/reservas.html">Reservar</a>
+            <div class="tarifas-rutas-grid">
+                <article class="ruta-card">
+                    <img src="img/img11.png" alt="Ciclista por una ciclorruta urbana con carril segregado"
+                        loading="lazy">
+                    <div>
+                        <h3>Río y Parques</h3>
+                        <p><span class="nivel-badge nivel-facil">Fácil</span></p>
+                        <a href="paginas/tarifas.html#rio-parques">Ver distancia y precio</a>
                     </div>
                 </article>
-                <article class="flota-card">
-                    <img src="img/img5.png" alt="Bicicletas disponibles para alquiler" loading="lazy">
-                    <div class="flota-card-content">
-                        <h3>Urbana Plegable</h3>
-                        <p>Se dobla en segundos; ideal para combinar con el metro.</p>
-                        <p class="flota-precio">$12.000 <span>por hora</span></p>
-                        <a href="paginas/reservas.html">Reservar</a>
+                <article class="ruta-card">
+                    <img src="img/img12.png" alt="Ciclistas en una ruta rural junto al agua" loading="lazy">
+                    <div>
+                        <h3>Sabores de Barrio</h3>
+                        <p><span class="nivel-badge nivel-medio">Medio</span></p>
+                        <a href="paginas/tarifas.html#sabores-barrio">Ver distancia y precio</a>
                     </div>
                 </article>
-                <article class="flota-card">
-                    <img src="img/img6.png" alt="Bicicletas recorriendo una ruta" loading="lazy">
-                    <div class="flota-card-content">
-                        <h3>Montaña Trail</h3>
-                        <p>Suspensión delantera y 21 cambios para las subidas.</p>
-                        <p class="flota-precio">$15.000 <span>por hora</span></p>
-                        <a href="paginas/reservas.html">Reservar</a>
-                    </div>
-                </article>
-                <article class="flota-card">
-                    <img src="img/img7.png" alt="Bicicletas recorriendo una ruta" loading="lazy">
-                    <div class="flota-card-content">
-                        <h3>Gravel Aventura</h3>
-                        <p>Para rutas mixtas de asfalto y destapado.</p>
-                        <p class="flota-precio">$18.000 <span>por hora</span></p>
-                        <a href="paginas/reservas.html">Reservar</a>
-                    </div>
-                </article>
-                <article class="flota-card">
-                    <img src="img/img8.png" alt="Bicicletas disponibles para alquiler" loading="lazy">
-                    <div class="flota-card-content">
-                        <h3>Eléctrica Urbana</h3>
-                        <p>Asistencia eléctrica con 45 km de autonomía.</p>
-                        <p class="flota-precio">$25.000 <span>por hora</span></p>
-                        <a href="paginas/reservas.html">Reservar</a>
-                    </div>
-                </article>
-                <article class="flota-card">
-                    <img src="img/img9.png" alt="Bicicletas disponibles para alquiler" loading="lazy">
-                    <div class="flota-card-content">
-                        <h3>Infantil</h3>
-                        <p>Para niños de 6 a 10 años.</p>
-                        <p class="flota-precio">$8.000 <span>por hora</span></p>
-                        <a href="paginas/reservas.html">Reservar</a>
-                    </div>
-                </article>
-                <article class="flota-card">
-                    <img src="img/img10.png" alt="Bicicletas disponibles para alquiler" loading="lazy">
-                    <div class="flota-card-content">
-                        <h3>Tándem</h3>
-                        <p>Para dos personas; perfecta para pasear en pareja.</p>
-                        <p class="flota-precio">$20.000 <span>por hora</span></p>
-                        <a href="paginas/reservas.html">Reservar</a>
+                <article class="ruta-card">
+                    <img src="img/img13.png" alt="Grupo de ciclistas subiendo una carretera de montaña"
+                        loading="lazy">
+                    <div>
+                        <h3>Reto Las Palmas</h3>
+                        <p><span class="nivel-badge nivel-dificil">Difícil</span></p>
+                        <a href="paginas/tarifas.html#reto-palmas">Ver distancia y precio</a>
                     </div>
                 </article>
             </div>

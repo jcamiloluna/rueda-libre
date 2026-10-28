@@ -60,6 +60,7 @@ nav {
     width: 100%;
     padding: 10px;
     background: #06324b;
+    border-radius: 15px;
 }
 
 nav ul {
@@ -67,20 +68,33 @@ nav ul {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 8px 18px;
+    gap: 8px;
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
 nav a {
+    display: block;
+    padding: 10px 14px;
+    border-radius: 6px;
     color: #fff;
+    font-weight: 700;
     text-decoration: none;
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
 }
 
 nav a:hover,
+nav a[aria-current="page"],
 nav a:focus-visible {
-    color: #a5d6a7;
+    transform: translateY(-2px);
+    background-color: #174c66;
+    color: #fff;
+}
+
+nav a:focus-visible {
+    outline: 2px solid #a5d6a7;
+    outline-offset: 2px;
 }
 
 main {
@@ -755,13 +769,17 @@ footer a:hover {
 }
 
 .flota-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
     gap: 20px;
 }
 
 .flota-card {
     display: flex;
+    flex: 1 1 250px;
     min-width: 0;
     flex-direction: column;
     overflow: hidden;
@@ -889,6 +907,7 @@ footer a:hover {
 }
 
 @media (prefers-reduced-motion: reduce) {
+    nav a,
     .flota-card,
     .flota-card > img,
     .ruta-card,
@@ -900,6 +919,12 @@ footer a:hover {
     .flota-card:focus-within,
     .ruta-card:hover,
     .ruta-card:focus-within {
+        transform: none;
+    }
+
+    nav a:hover,
+    nav a[aria-current="page"],
+    nav a:focus-visible {
         transform: none;
     }
 
