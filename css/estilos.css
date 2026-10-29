@@ -24,26 +24,21 @@ a:hover {
 }
 
 .head {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
     padding: 14px 16px;
     border-bottom: 4px solid #9dbebb;
     background: #9dbebb;
     color: #fff;
-    text-align: center;
 }
 
 .head-marca {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 12px;
-}
-
-.head-marca a {
-    line-height: 0;
+    margin-right: auto;
+    color: #fff;
+    font-size: clamp(1.25rem, 5vw, 1.8rem);
+    font-weight: 700;
+    text-decoration: none;
 }
 
 .head img {
@@ -51,31 +46,22 @@ a:hover {
     filter: brightness(0) invert(1);
 }
 
-.head h1 {
-    margin: 0;
-    font-size: clamp(1.25rem, 5vw, 1.8rem);
-}
-
-nav {
+.head nav {
     width: 100%;
-    padding: 10px;
-    background: #06324b;
-    border-radius: 15px;
 }
 
-nav ul {
+.head .navbar-collapse {
+    flex-grow: 0;
+}
+
+.head .navbar-nav {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    padding: 8px;
+    border-radius: 12px;
+    background: #06324b;
 }
 
-nav a {
-    display: block;
+.head .nav-link {
     padding: 10px 14px;
     border-radius: 6px;
     color: #fff;
@@ -84,17 +70,21 @@ nav a {
     transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
 }
 
-nav a:hover,
-nav a[aria-current="page"],
-nav a:focus-visible {
+.head .nav-link:hover,
+.head .nav-link[aria-current="page"],
+.head .nav-link:focus-visible {
     transform: translateY(-2px);
     background-color: #174c66;
     color: #fff;
 }
 
-nav a:focus-visible {
+.head .nav-link:focus-visible {
     outline: 2px solid #a5d6a7;
     outline-offset: 2px;
+}
+
+.head .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.65);
 }
 
 main {
@@ -667,10 +657,15 @@ footer a:hover {
     line-height: 1.65;
 }
 
-.inicio-hero-image {
+.inicio-hero-carousel {
     width: 100%;
-    max-height: 320px;
+    overflow: hidden;
     border-radius: 12px;
+}
+
+.inicio-hero-carousel .carousel-item img {
+    width: 100%;
+    height: 260px;
     object-fit: cover;
 }
 
@@ -907,7 +902,7 @@ footer a:hover {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    nav a,
+    .head .nav-link,
     .flota-card,
     .flota-card > img,
     .ruta-card,
@@ -922,9 +917,9 @@ footer a:hover {
         transform: none;
     }
 
-    nav a:hover,
-    nav a[aria-current="page"],
-    nav a:focus-visible {
+    .head .nav-link:hover,
+    .head .nav-link[aria-current="page"],
+    .head .nav-link:focus-visible {
         transform: none;
     }
 
@@ -1026,23 +1021,11 @@ footer a:hover {
 
 @media (min-width: 768px) {
     .head {
-        flex-direction: row;
-        justify-content: space-between;
         padding: 12px 24px;
-        text-align: left;
     }
 
     .head img {
         width: 72px;
-    }
-
-    nav {
-        width: auto;
-        flex: 0 1 auto;
-    }
-
-    nav ul {
-        gap: 12px 20px;
     }
 
     main {
@@ -1181,8 +1164,8 @@ footer a:hover {
         padding: 40px;
     }
 
-    .inicio-hero-image {
-        max-height: 360px;
+    .inicio-hero-carousel .carousel-item img {
+        height: 360px;
     }
 
     .inicio-benefits {
@@ -1214,6 +1197,16 @@ footer a:hover {
 
     .inicio-contact-actions {
         align-items: flex-start;
+    }
+}
+
+@media (min-width: 992px) {
+    .head nav {
+        width: auto;
+    }
+
+    .head .navbar-nav {
+        width: fit-content;
     }
 }
 
